@@ -71,7 +71,7 @@ public class Cliente implements ManipulacionDatos {
 
         }
         catch (FileNotFoundException e) {
-            System.out.println("No se ha encontrado el archivo.");
+            System.out.println("No se ha encontrado el archivo: Clientes.dat");
         }
         catch (NoSuchElementException e) {
             System.out.println("Error en la carga de datos: Token fallido.");

@@ -1,19 +1,25 @@
+import Datos.Producto;
+import Datos.PuntoVenta;
+import Datos.Sucursal;
 import Personas.*;
-
+import Utilerias.*;
 
 public class Implementacion {
 
     public static void main(String[] args) {
-        //PERSONAS-Cliente:
-        final int NUMEROCLIENTES = 5; //Se cuenta el cero.
-        Cliente clientes[] = new Cliente[NUMEROCLIENTES];
+        //Estado inicial del sistema:
+        EstadoActualSistema.setProductosActuales(5);
+        EstadoActualSistema.setSucursalesActuales(2);
+        EstadoActualSistema.setPuntosActuales(2);
 
-        for (int i = 0; i < NUMEROCLIENTES; i++) {
-            System.out.println("ITERACION: " + i);
-            clientes[i] = new Cliente();
-            clientes[i].leerDatos();
-            clientes[i].mostrarDatos();
-            System.out.println();
-        }
+        Cliente[] clientes;
+        Sucursal[] sucursales;
+        Producto[] productos;
+        PuntoVenta[] puntos;
+
+        clientes = LecturaDatos.leerCliente();
+        sucursales = LecturaDatos.leerSucursal();
+        productos = LecturaDatos.leerProducto();
+        puntos = LecturaDatos.leerPuntoVenta();
     }
 }
